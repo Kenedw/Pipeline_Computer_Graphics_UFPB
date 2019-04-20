@@ -1,9 +1,31 @@
+# Computer-Graphics-UFPB
+---
+
+# Menu
+* [Introdução](#introdução)
+	* [Objetivo](#Objetivo)
+* [Estágios do Pipeline Gráfico](#Estágios-do-Pipeline-Gráfico)
+	* [1. Transformação: Espaço do Objeto → Espaço do Universo](#1.-Transformação:-Espaço-do-Objeto-→-Espaço-do-Universo)
+		* [Rotação](#Rotação)
+		* [Escala](#Escala)
+		* [Cisalhamento (Shear)](#Cisalhamento-(Shear))
+	* [2. Transformação: Espaço do Universo → Espaço da Câmera](#2.-Transformação:-Espaço-do-Universo-→-Espaço-da-Câmera)
+	*	[3. Transformação: Espaço da Câmera → Espaço Projetivo ou de Recorte](#3.-Transformação:-Espaço-da-Câmera-→-Espaço-Projetivo-ou-de-Recorte)
+	*	[4. Transformação: Espaço de Recorte → Espaço “Canônico"](#4.-Transformação:-Espaço-de-Recorte-→-Espaço-“Canônico”)
+	*	[5. Transformação: Espaço “Canônico” → Espaço de Tela](#5.-Transformação:-Espaço-“Canônico”-→-Espaço-de-Tela)
+*	[Criação do Pipeline Gráfico](#Criação-do-Pipeline-Gráfico)
+*	[Resultados](#Resultados)
+*	[Conclusão](#Conclusão)
+*	[Referências](#Referências)
+---
+
+
 # Introdução 
 
 O pipeline gráfico é um dos conceitos essenciais da Computação Gráfica, é importante entendê-lo para dominar as APIs gráficas OpenGL e DirectX, pois diversas funções destas API's agem sobre diferentes estágios do pipeline e a compreensão das etapas do pipelines farão o usuário ter uma melhor experiência ao utilizar estas API's.
 
 
-# Objetivo
+## Objetivo
 
 Através da implementação de um pipeline gráfico, iremos compreender melhor cada um dos processos que ocorrem até que os modelos geométricos cheguem até a tela. Ainda conheceremos com mais detalhes as dificuldades que ocorrem entre as transições e que estratégias podem ser utilizadas para superar tais dificuldades. Com estes conhecimentos, iremos ser capazes de conhecer com mais clareza as ferramentas gráficas que temos atualmente e acrescentar uma melhor experiência ao utilizá-las. 
 
@@ -452,3 +474,7 @@ Aqui poderemos comparar o resultado obtido com o resultado do loader disponibili
 # Conclusão
 
 Com a implementação do pipeline podemos colocar em prática os conhecimentos obtidos na disciplina e entender melhor o funcionamento do mesmo.
+
+#	Referências
+
+*	Notas de Aula do Professor Christian A. P.
