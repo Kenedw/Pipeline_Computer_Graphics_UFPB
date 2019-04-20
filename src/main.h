@@ -2,9 +2,10 @@
 #include <GL/glu.h>
 #include <GL/glut.h>
 #include <iostream>
+#include <tuple>
 
-#include "./lib/mygl/definitions.h"
-#include "./lib/mygl/mygl.h"
+#include "lib/mygl/definitions.h"
+#include "lib/mygl/mygl.h"
 
 GLuint tex;
 

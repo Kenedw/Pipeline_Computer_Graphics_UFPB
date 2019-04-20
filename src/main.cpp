@@ -4,6 +4,7 @@
 
 objLoader* objData;
 double angle = 0.0f;
+CGDraw CG;
 
 void MyGlDraw(void)
 {
@@ -24,18 +25,23 @@ void MyGlDraw(void)
 	viewPlaneDGL(2.1);
 
 	//Matriz de Rotação
-	//rotateGL(angle, 1.0f, 0.0f, 0.0f);
-	rotateGL(angle, 0.0f, 1.0f, 0.0f);
+	// rotateGL(angle, 0.0f, 1.0f, 0.0f);
+	// rotateGL(angle, 1.0f, 0.0f, 0.0f);
 	//Velocidade da rotação uniforme
-	angle += 0.01f;
+	// angle += 0.01f;
 
-	//shearGL(0.9f,0.0f,0.0f);
+	// shearGL(0.9f,0.0f,0.0f);
+	// scaleGL(1,3,1);
 	
 	//Limpa o Color Buffer
 	memset(FBptr, 0, IMAGE_WIDTH * IMAGE_HEIGHT * 4);
 	
 	//Cria os 3 vértices do triângulo
-	Pixel pixel[3];
+	std::tuple <int,int> piXel[3];
+	//cor do obj
+	tuple <int,int,int,int> RGBA2 (0,255,0,255); //Verde
+	tuple <int,int,int,int> RGBA3 (0,0,255,255); //Azul
+	tuple <int,int,int,int> RGBA1 (255,0,0,255); //vermelho
 
 	
 	for(int f = 0; f < objData->faceCount; f++) {
@@ -49,14 +55,14 @@ void MyGlDraw(void)
 				objData->vertexList[obj->vertex_index[i]]->e[1],
 				objData->vertexList[obj->vertex_index[i]]->e[2]
 			);
-			//printf("%f\n",objData->vertexList[obj->vertex_index[i]]->e[0]);
+
 			//Com os pontos de coordenada de tela obtidos, cria os pixels que serão os vértices dos triângulos
-			pixel[i] = createPixel(p.x, p.y, pixel[i]);
+		  piXel[i] = std::make_tuple (p.x,p.y);       // move assignment
 		}
 		
 		//Desenha o triângulo ligando os seus vértices
 		//Utiliza o bresenham criado na atividade anterior
-		drawTriangle(pixel[0], pixel[1], pixel[2]);
+		CG.DrawTriangle(piXel[0],piXel[1],piXel[2],RGBA3,RGBA2,RGBA3);
 	}
 }
 
